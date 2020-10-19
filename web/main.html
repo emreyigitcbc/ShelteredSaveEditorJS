@@ -1,0 +1,54 @@
+<html>
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="/eel.js"></script>
+<title>Sheltered Save Editor</title>
+    <link rel="stylesheet" href="default.css" type="text/css">
+    <script src="js.js"></script>
+    <link rel="shortcut icon" href="favicon.jpg" />
+    <script>
+        eel.print_table_py("uieuieueuieuie");
+
+    </script>
+</head>
+<body>
+<div class="info">
+    <p>Welcome to Sheltered Save Editor v1.0 by Yiğit Öztürk!</p>
+    <p>With this tool, you can edit your sheltered save.</p>
+        1. Upload your file and let it decode!<br>
+        2. Edit your save and save changes.<br>
+        3. Download your re-recyrpted save!<br>
+</div>
+<hr>
+<a id="downloadResult" style="display: none;">Download DECODED File</a>
+<a id="downloadResult2" style="display: none;"></a>
+<div id="decode">
+    <h3>DECODE:</h3>
+    <div class="file">
+        <input type="file" name="file"/>
+    </div>
+</div>
+<div id="edit">
+    <input type="text" class="item" placeholder="Search ID (press ENTER)" onchange="window.location.href = '#'+this.value"/>
+    <div>Inventory Manager:
+        <br><button name="changeValues" class="submit">Save Changes</button><br>
+        <table id="inventory">
+            <tbody>
+                <tr>
+                    <th>ITEM</th>
+                    <th>COUNT</th>
+                </tr>
+            </tbody>
+        </table>
+        <br><button name="changeValues" class="submit">Save Changes</button><br>
+    </div>
+</div>
+<div id="encode">
+<h3>ENCODE:</h3>
+Upload your encodeable file with .dat extension please.
+    <div class="file">
+        <input type="file" name="file"/>
+    </div>
+</div>
+</body>
+</html>
