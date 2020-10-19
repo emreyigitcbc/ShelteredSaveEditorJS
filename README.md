@@ -12,6 +12,7 @@ You can run with:
   If you've downloaded **release** as **executable**, you can just simply execute. (for Windows)
   If you've downloaded **source code**, you have 2 options. (for every OS)
  ##### Python method
+- Needs `eel` module to run.
 - Run on command line or terminal with line below:
   ```
   python main.py
