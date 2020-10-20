@@ -1,76 +1,22 @@
-html {
-    padding: 0;
-    margin: 0;
-}
+/*
+ * SHELTERED SAVE EDITOR
+ * File Name: main.css
+ * Version: 1.1
+ * Author: Emre Cebeci
+ * GitHub: https://github.com/emreyigitcbc/
+ */
 
-body {
-    background: linear-gradient(to right bottom, #383a3d, #5f656e);
-    padding: 5px;
-    font-size: 14px;
-    font-family: Arial Black;
-    color: white;
+.editor-nav {
+    font-size: 16px;
     text-align: center;
-    left: 0;
-    right: 0;
-    margin: auto;
+    border: 1px white solid;
+    width: auto;
+    border-radius: 10px;
 }
-a {
-text-decoration: none;
-}
-a:hover {
-color: green;
-}
-div.info {
-left: 0;
-right: 0;
-margin: auto;
-background: #383a3d
-height: auto;
-width: 500px;
-border-radius: 5px;
-border: 1px solid black;
-padding: 50px;
-}
-div#encode, div#edit {
-display: none;
-}
-input {
-color: black;
-}
-table {
-    left: 0;
-    right: 0;
-    margin: auto;
-  border-collapse: collapse;
-}
-table, th, td {
-text-align: center;
-  border: 2px solid black;
-  padding: 5px;
-}
-input.item {
-text-align: center;
-border: none;
-width: auto;
-height: auto;
-color: black;
-font-size: 16px;
-font-family: Arial Black;
-background: rgba(0,0,0,0);
-}
-input.item:active{
-background: rgba(0,0,0,0.5);
-}
-input.item:hover{
-background: rgba(0,0,0,0.4);
-}
-button.submit{
-border: 1px solid black;
-border-radius: 5px;
-background: rgba(0,0,0,0.2);
-padding: 5px;
-color: green;
-}
-button.submit:hover{
-background: rgba(0,0,0,0.4);
+.editor-nav-item {
+    border: none;
+    background: gray;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 5px;
 }

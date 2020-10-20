@@ -1,53 +1,105 @@
+<!--
+SHELTERED SAVE EDITOR
+File: main.html
+Version: 1.1
+Author: Emre Cebeci
+GitHub: https://github.com/emreyigitcbc/
+-->
 <html>
 <head>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
-<script type="text/javascript" src="/eel.js"></script>
-<title>Sheltered Save Editor</title>
+    <title>Sheltered Save Editor - Emre Cebeci</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="jquery.js"></script>
     <link rel="stylesheet" href="default.css" type="text/css">
-    <script src="js.js"></script>
-    <link rel="shortcut icon" href="favicon.jpg" />
-    <script>
-        eel.print_table_py("uieuieueuieuie");
-
-    </script>
+    <link rel="stylesheet" href="bootstrap.css" type="text/css">
+    <script type="text/javascript" src="item_names.js"></script>
+    <script type="text/javascript" src="js.js"></script>
+    <script type="text/javascript" src="bootstrap.js"></script>
+    <link rel="shortcut icon" href="favicon.jpg"/>
 </head>
-<body>
-<div class="info">
-    <p>Welcome to Sheltered Save Editor v1.0 by Yiğit Öztürk!</p>
-    <p>With this tool, you can edit your sheltered save.</p>
-        1. Upload your file and let it decode!<br>
-        2. Edit your save and save changes.<br>
-        3. Download your re-recyrpted save!<br>
+<body class="bg-dark text-white">
+<div class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+        <a class="navbar-brand" href="#" style="color: #1fffff; font-size: 200%;">SAVE EDITOR</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto" style="font-size: 100% !important">
+                <li class="nav-item" id="nav-first"><a class="nav-link" href="#" onclick="swapPage(0)">Welcome Page</a>
+                </li>
+                <li class="nav-item" style="display: none;" id="nav-second"><a class="nav-link" href="#"
+                                                                               onclick="swapPage(1)">Upload Page</a>
+                </li>
+                <li class="nav-item" style="display: none;" id="nav-third"><a class="nav-link" href="#"
+                                                                              onclick="swapPage(2)">Editor Page</a></li>
+                <li class="nav-item" style="display: none;" id="nav-fourth"><a class="nav-link" href="#"
+                                                                               onclick="swapPage(3)">Download Page</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#" id="nav-pos">Position: Welcome Page</a></li>
+            </ul>
+        </div>
+    </nav>
 </div>
-<hr>
-<a id="downloadResult" style="display: none;">Download DECODED File</a>
-<a id="downloadResult2" style="display: none;"></a>
-<div id="decode">
-    <h3>DECODE:</h3>
-    <div class="file">
-        <input type="file" name="file"/>
+<div class="container text-white">
+    <div id="welcome-page"><p>Welcome to Sheltered Save Editor v1.1 by Emre Cebeci!</p>
+        <p>You can use this tool for:</p>
+        1. Editing inventory. (all)<br>
+        2. Editing players' perks. (not all)<br>
+        3. Editing save info. (all)
+        <p>You can edit everything by downloading decoded file. If you download and edit manually, you must go "Upload"
+            page and upload your save. It will encrypt and automatically direct you to download page.</p>
+        <a href="#" onclick="swapPage(1)"><h3>Click here to go upload page!</h3></a>
     </div>
-</div>
-<div id="edit">
-    <input type="text" class="item" placeholder="Search ID (press ENTER)" onchange="window.location.href = '#'+this.value"/>
-    <div>Inventory Manager:
-        <br><button name="changeValues" class="submit">Save Changes</button><br>
-        <table id="inventory">
-            <tbody>
+    <div id="upload-page" style="display: none;">
+        <h3>Please upload "savedata_0n.dat"</h3>
+        <p>Save file is located in "Sheltered/saves/" folder. Please backup your save file first. If you want to encrypt
+            file, just upload it will automatically direct you download page.</p>
+        <br>
+        <div class="file">
+            <input type="file" name="upload-file"/>
+        </div>
+    </div>
+    <div id="editor-page" style="display: none;">
+        <p id="status"></p>
+        <div class="editor-nav" id="editor-nav">
+            <button id="editor-nav-inv" class="editor-nav-item" onclick="swapPage(10)">Inventory</button>
+            <button id="editor-nav-player" class="editor-nav-item" onclick="swapPage(11)">Players</button>
+            <button id="editor-nav-world" class="editor-nav-item" onclick="swapPage(12)">Save Info</button>
+            <a name="download-button" class="mx-2 editor-nav-item" style="display: none;">Download</a>
+            <span>Author: Emre Cebeci, Version: 1.1</span>
+        </div>
+        <button name="save-changes" class="btn btn-primary" style="margin: 5px">Save Changes</button>
+        <br>
+        <div id="inventory-editor" class="text-white">
+            <table id="editor-inv-table" class="table table-dark">
                 <tr>
-                    <th>ITEM</th>
-                    <th>COUNT</th>
+                    <th>Item Name</th>
+                    <th>Item ID</th>
+                    <th>Item Count</th>
                 </tr>
-            </tbody>
-        </table>
-        <br><button name="changeValues" class="submit">Save Changes</button><br>
+            </table>
+        </div>
+        <div id="player-editor" style="display: none;" class="text-white">
+            <div id="player-selector"></div>
+        </div>
+        <div id="world-editor" style="display: none;" class="text-white">
+            <table class="table table-dark" id="editor-wrl-table">
+                <tr>
+                    <th>Option</th>
+                    <th>Option Value</th>
+                </tr>
+            </table>
+        </div>
+        <button name="save-changes" class="btn btn-primary" style="margin: 5px">Save Changes</button>
     </div>
-</div>
-<div id="encode">
-<h3>ENCODE:</h3>
-Upload your encodeable file with .dat extension please.
-    <div class="file">
-        <input type="file" name="file"/>
+    <div id="download-page" style="display: none;">
+        <h2>Download Save</h2>
+        <p>Please report bugs and send feedback if you want new features.</p>
+        <p id="file-encrypted">File succesfully encrypted! Please download down below.</p>
+        <a name="download-button" style="display: none;">Download</a>
     </div>
 </div>
 </body>
