@@ -9,6 +9,8 @@ You can run with:
   - Executable File
 
 # How to run?
+  You can use it online: https://emreyigitcbc.github.io/shelteredsave/
+  
   If you've downloaded **release** as **executable**, you can just simply execute. (for Windows)
   If you've downloaded **source code**, you have 2 options. (for every OS)
  ##### Python method
