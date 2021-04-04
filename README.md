@@ -3,7 +3,7 @@
 [![version](https://img.shields.io/badge/version-1.1-yellow.svg)](https://conventionalcommits.org)
 
 This project won't be continued please check this repo instead of this:
-[Sheltered Save Editor](https://github.com/emreyigitcbc/ShelteredSaveEditorJS)
+[Sheltered Save Editor](https://github.com/emreyigitcbc/ShelteredSaveEditor)
 
 Simple, easy to use web based editor.
 
