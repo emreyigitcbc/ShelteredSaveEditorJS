@@ -1,6 +1,10 @@
 # Sheltered Save Editor
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger) [![version](https://img.shields.io/badge/version-1.1-yellow.svg)](https://conventionalcommits.org)
+[![version](https://img.shields.io/badge/version-1.1-yellow.svg)](https://conventionalcommits.org)
+
+This project won't be continued please check this repo instead of this:
+[Sheltered Save Editor](https://github.com/emreyigitcbc/ShelteredSaveEditorJS)
+
 Simple, easy to use web based editor.
 
 You can run with:
